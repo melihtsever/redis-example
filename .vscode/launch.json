@@ -1,0 +1,32 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch via NPM",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": [
+                "run-script",
+                "dev"
+            ],
+            "port": 9229
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program redis",
+            "program": "${workspaceFolder}/src/index.js",
+            "env":{
+                "NODE_ENV" : "development",
+                "PORT" : "3000",
+                "Mongo" : "mongodb://127.0.0.1:27017/mongo-redis",
+                "REDIS_URL" : "redis://10.0.8.222:6379"
+            }
+
+        }
+    ]
+}
