@@ -20,13 +20,23 @@
             "request": "launch",
             "name": "Launch Program redis",
             "program": "${workspaceFolder}/src/index.js",
-            "env":{
-                "NODE_ENV" : "development",
-                "PORT" : "3000",
-                "Mongo" : "mongodb://127.0.0.1:27017/mongo-redis",
-                "REDIS_URL" : "redis://10.0.8.222:6379"
-            }
-
-        }
+            "envFile": "${workspaceFolder}/config/dev.env"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "nodemon dev",
+            "runtimeExecutable": "nodemon",
+            "runtimeArgs": [
+                "--inspect"
+            ],
+            "envFile": "${workspaceFolder}/config/dev.env",
+            "program": "${workspaceRoot}/src/index.js",
+            "restart": true,
+            "port": 9229,
+            "protocol": "inspector",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
+        },
     ]
 }
